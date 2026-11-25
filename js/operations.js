@@ -1,6 +1,6 @@
 /* LOCALPLAN © 2026 project team. All rights reserved. */
 // A worker is an editable scene instance; its transient simulation actor is separate.
-const opStations=()=>s.units.filter(u=>!u.baseY&&!['standing_person','door','window','column','wall_segment','cafe_chair','cafe_table'].includes(u.model));
+const opStations=()=>s.units.filter(u=>!u.baseY&&!u.decor&&!['standing_person','door','window','column','wall_segment','cafe_chair','cafe_table','round_table','long_table','wall_desk','cafe_stool','toilet_fixture','sink_counter'].includes(u.model));
 const opWorkers=()=>s.units.filter(u=>u.model==='standing_person');
 function opDefault(i=0){let stations=opStations(),ids=new Set(stations.map(u=>u.id)),links=s.links.filter(l=>ids.has(l.a)&&ids.has(l.b));let l=links[i%links.length];return {from:l?.a||stations[i%stations.length]?.id||'',to:l?.b||stations[(i+1)%stations.length]?.id||'',pickup:4,drop:4};}
 function opAssignment(u,i){return u.operation||opDefault(i)}
