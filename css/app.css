@@ -13,3 +13,5 @@ body.dark{--bg:#09090b;--panel:#171719;--ink:#fafafa;--muted:#aaa;--line:#454545
 .cameraBox .viewFaces button{min-width:0}
 .stagefoot>div:last-child button{min-width:44px;white-space:nowrap}
 @media(max-width:760px){.cameraBox{width:192px;max-width:192px;bottom:54px}.cameraBox button{min-height:34px;font-size:11px}.cameraBox .muted{display:none}}
+
+#simPanel{position:absolute;left:124px;top:88px;z-index:3;padding:12px;width:260px;display:grid;gap:8px}#simPanel[hidden]{display:none}#simPanel label{font-size:12px}#simPanel input[type=number],#simPanel select{width:100%;background:var(--bg);border:1px solid var(--line);padding:5px}#simPanel small{font-size:12px}#simReadout{font-variant-numeric:tabular-nums}#simPanel button{min-height:36px}@media(max-width:760px){#simPanel{left:72px;top:60px;width:min(250px,calc(100% - 80px))}}
